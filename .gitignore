@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# ...except...
+!.gitignore
+!*.tex
+!*.pdf
+!*.md
+
+# The above is used to exclude any of the auxilliary files as part of the LaTeX compilation process.
