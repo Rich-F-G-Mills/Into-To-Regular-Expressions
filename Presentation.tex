@@ -4,7 +4,7 @@
 \documentclass[
 	usenames,
 	dvipsnames,
-	%handout
+	handout
 ] {beamer}
 
 \usepackage{bold-extra}		% Gives us bold tt font.
@@ -42,6 +42,7 @@
 \newcommand{\reNonDigit}{\textbackslash{}D}
 \newcommand{\reWord}{\textbackslash{}w}
 \newcommand{\reSpace}{\textbackslash{}s}
+\newcommand{\reNewLine}{\textbackslash{}n}
 
 \newcommand{\rePattern}[1]{{\Large\texttt{\textcolor{blue}{#1}}}}
 \newcommand{\reMatch}[1]{\texttt{\textcolor{blue}{#1}}}
@@ -75,7 +76,7 @@
 			      	      \pause
 			      	\item Perform (advanced) find-and-replace operations within a string.
 			      	      \pause
-			      	\item Commonly used in compilers/interpreters for parsing user code
+			      	\item Commonly used in compilers/interpreters for parsing user code.
 			      	      \pause
 			      	\item Input validation for websites.
 			      		\pause
@@ -166,12 +167,14 @@
 				\pause
 			\>\>\>\>\>\> date\_part = string[i:i+10] \\
 				\pause
-			\>\>\>\>\>\> \kw{return} date\_part \\
+			\>\>\>\>\>\> \kw{return} date\_part \\[1em]
+				\pause
+			\kw{error} `No date!'
 				\pause
 		\end{tabbing}
 	\end{ttfamily}
 	
-	\bigskip
+	\medskip
 	\textbf{Is there an alternative way?}
 \end{frame}
     
@@ -195,8 +198,6 @@
 			      		\pause
 		      \end{itemize}		      
 		\item \textbf{Can we refine it?}
-		      \pause
-		      \ldots Of course!
 	\end{itemize}
 \end{frame}
     
@@ -572,7 +573,7 @@ dplyr::filter(
 			\pause
 		\item Using \emph{anchors} such as \rePattern{\^{}} and \rePattern{\$} to ensure that matches begin and/or finish at the start/end of a string respectively.
 			\pause
-		\item Many other character classes such as \rePattern{\reWord} and \rePattern{\reSpace}.
+		\item Many other character classes such as \rePattern{\reWord}, \rePattern{\reSpace} and \rePattern{\reNewLine}.
 			\pause
 		\item \emph{Flags}; for example \rePattern{(?i)} makes a pattern case-insensitive.
 	\end{itemize}
